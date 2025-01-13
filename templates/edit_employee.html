@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Edit Employee{% endblock %}
+{% block content %}
+<div class="content-wrapper">
+    <h2>Edit Employee</h2>
+    <form method="POST" class="employee-form">
+        {{ form.hidden_tag() }}
+        <div>
+            <label for="name">{{ form.name.label }}</label>
+            {{ form.name }}
+        </div>
+        <div>
+            <label for="designation">{{ form.designation.label }}</label>
+            {{ form.designation }}
+        </div>
+        <div>
+            {{ form.submit }}
+        </div>
+    </form>
+</div>
+{% endblock %}

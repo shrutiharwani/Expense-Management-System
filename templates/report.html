@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block title %}Reports{% endblock %}
+{% block content %}
+<div class="content-wrapper">
+    <h2>Reports</h2>
+
+    <section class="report-section">
+        <h3>By Project</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Project Name</th>
+                    <th>Total Expenses</th>
+                    <th>Total Revenues</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for report in project_reports %}
+                <tr>
+                    <td>{{ report.name }}</td>
+                    <td>{{ report.total_expenses }}</td>
+                    <td>{{ report.total_revenues }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+
+    <section class="report-section">
+        <h3>By Seller</h3>
+        <ul class="report-list">
+            {% for seller in sellers %}
+            <li>{{ seller.name }} (GSTN: {{ seller.gstn }})</li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section class="report-section">
+        <h3>By Item Name</h3>
+        <ul class="report-list">
+            {% for item in items %}
+            <li>{{ item.item_name }}</li>
+            {% endfor %}
+        </ul>
+    </section>
+</div>
+{% endblock %}

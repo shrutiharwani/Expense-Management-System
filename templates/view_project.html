@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block title %}Project Details{% endblock %}
+{% block content %}
+<div class="content-wrapper">
+    <h2>Project: {{ project.name }}</h2>
+    <p><strong>Total Expenses:</strong> {{ total_expenses }}</p>
+    <p><strong>Total Revenues:</strong> {{ total_revenues }}</p>
+
+    <section class="project-details-section">
+        <h3>Expenses</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Item Name</th>
+                    <th>Total Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for expense in expenses %}
+                <tr>
+                    <td>{{ expense.item_name }}</td>
+                    <td>{{ expense.total_amount }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+
+    <section class="project-details-section">
+        <h3>Revenues</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Project Name</th>
+                    <th>Total Revenue</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for revenue in revenues %}
+                <tr>
+                    <td>{{ revenue.project_name }}</td>
+                    <td>{{ revenue.total_estimated_revenue }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+</div>
+{% endblock %}

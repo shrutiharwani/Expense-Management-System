@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block title %}Manage Employees{% endblock %}
+{% block content %}
+<div class="content-wrapper">
+    <h2>Manage Employees</h2>
+    <form method="POST" class="employee-form">
+        {{ form.hidden_tag() }}
+        <div>
+            <label for="name">{{ form.name.label }}</label>
+            {{ form.name }}
+        </div>
+        <div>
+            <label for="designation">{{ form.designation.label }}</label>
+            {{ form.designation }}
+        </div>
+        <div>
+            {{ form.submit }}
+        </div>
+    </form>
+    <hr>
+    <h3>Employee List</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Designation</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for employee in employees %}
+            <tr>
+                <td>{{ employee.name }}</td>
+                <td>{{ employee.designation }}</td>
+                <td>
+                    <a href="{{ url_for('routes.edit_employee', id=employee.id) }}">Edit</a>
+                    <form method="POST" action="{{ url_for('routes.delete_employee', id=employee.id) }}" style="display:inline;">
+                        <button type="submit" class="delete-button">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

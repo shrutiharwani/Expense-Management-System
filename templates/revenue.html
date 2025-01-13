@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}Revenue Management{% endblock %}
+{% block content %}
+<h2>Log Revenue</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <div>{{ form.project_id.label }} {{ form.project_id }}</div>
+    <div>{{ form.total_estimated_revenue.label }} {{ form.total_estimated_revenue }}</div>
+    <div>{{ form.employee_id.label }} {{ form.employee_id }}</div>
+    <div>{{ form.submit }}</div>
+</form>
+<hr>
+<h3>Revenues</h3>
+<table>
+    <tr>
+        <th>Project Name</th>
+        <th>Total Estimated Revenue</th>
+        <th>Employee Name</th>
+    </tr>
+    {% for revenue in revenues %}
+    <tr>
+        <td>{{ revenue.project_name }}</td>
+        <td>{{ revenue.total_estimated_revenue }}</td>
+        <td>{{ revenue.employee_name }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

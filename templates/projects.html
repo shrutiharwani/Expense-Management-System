@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}Manage Projects{% endblock %}
+{% block content %}
+<div class="content-wrapper">
+    <h2>Manage Projects</h2>
+    <form method="POST" class="project-form">
+        {{ form.hidden_tag() }}
+        <div>
+            <label for="name">{{ form.name.label }}</label>
+            {{ form.name }}
+        </div>
+        <div>
+            {{ form.submit }}
+        </div>
+    </form>
+    <hr>
+    <h3>Project List</h3>
+    <ul class="project-list">
+        {% for project in projects %}
+        <li>
+            <a href="{{ url_for('routes.view_project', id=project.id) }}">{{ project.name }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
