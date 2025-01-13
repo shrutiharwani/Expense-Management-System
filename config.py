@@ -1,7 +1,7 @@
 import secrets
 
 class Config:
-    SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:shru6@localhost:5432/cookie_db'
+    SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:password@localhost:5432/yourdb_db'
 
     SECRET_KEY = secrets.token_hex(16)
 
