@@ -110,30 +110,5 @@ http://127.0.0.1:5000/
 
 --------------------------------------------------
 
-DEFAULT CONFIGURATION
 
-- Database: SQLite (created automatically on first run)
-- Debug Mode: Enabled (can be modified in config.py)
 
---------------------------------------------------
-
-FUTURE ENHANCEMENTS
-
-- User authentication and role-based access
-- Export reports to PDF or Excel
-- Dashboard with charts and analytics
-- PostgreSQL or MySQL database support
-
---------------------------------------------------
-
-LICENSE
-
-This project is intended for educational purposes.
-
---------------------------------------------------
-
-AUTHOR
-
-Developed by [Your Name]
-
-If you find this project useful, please consider starring the repository.
